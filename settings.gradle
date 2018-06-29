@@ -1,3 +1,3 @@
 include '1.10.2'
 include '1.7.10'
-rootProject.name = 'LetsEncryptRoot'
+rootProject.name = 'LetsEncryptCraft'

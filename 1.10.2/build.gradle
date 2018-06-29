@@ -18,6 +18,6 @@ minecraft {
     mappings = "snapshot_20161111"
     makeObfSourceJar = false
 
-    replaceIn "letsencryptroot.java"
+    replaceIn "letsencryptcraft.java"
     replace "@VERSION@", project.version.toString()
 }

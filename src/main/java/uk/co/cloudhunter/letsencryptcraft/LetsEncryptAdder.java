@@ -1,4 +1,4 @@
-package uk.co.cloudhunter.letsencryptroot;
+package uk.co.cloudhunter.letsencryptcraft;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 import java.io.BufferedInputStream;

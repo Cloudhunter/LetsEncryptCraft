@@ -1,7 +1,7 @@
 [
 {
-  "modid": "letsnecryptroot",
-  "name": "Let's Encrypt Root",
+  "modid": "letsnecryptcraft",
+  "name": "Let's Encrypt Craft",
   "description": "Mojang uses old Java 8... so lets add it ourselves.",
   "version": "${version}",
   "mcversion": "${mcversion}",

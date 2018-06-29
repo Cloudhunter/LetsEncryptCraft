@@ -7,8 +7,8 @@ apply plugin: 'idea'
 version = "1.0.0"
 
 allprojects {
-    group= "uk.co.cloudhunter.letsencryptroot"
-    archivesBaseName = "letsencryptroot"
+    group= "uk.co.cloudhunter.letsencryptcraft"
+    archivesBaseName = "letsencryptcraft"
 
     sourceCompatibility = targetCompatibility = "1.7"
     compileJava {

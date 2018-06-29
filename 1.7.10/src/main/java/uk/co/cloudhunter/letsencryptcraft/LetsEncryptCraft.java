@@ -1,7 +1,7 @@
-package uk.co.cloudhunter.letsencryptroot;
+package uk.co.cloudhunter.letsencryptcraft;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,15 +9,14 @@ import org.apache.logging.log4j.Logger;
 import java.io.InputStream;
 import java.net.URL;
 
-
-@Mod(modid = LetsEncryptRoot.MOD_ID, name = LetsEncryptRoot.NAME, version = LetsEncryptRoot.VERSION, acceptableRemoteVersions="*", acceptedMinecraftVersions = "*")
-public class LetsEncryptRoot
+@Mod(modid = LetsEncryptCraft.MOD_ID, name = LetsEncryptCraft.NAME, version = LetsEncryptCraft.VERSION, acceptableRemoteVersions="*", acceptedMinecraftVersions = "*")
+public class LetsEncryptCraft
 {
 
-    public static final String MOD_ID = "letsencryptroot";
-    public static final String NAME = "Let's Encrypt Root";
+    public static final String MOD_ID = "letsencryptcraft";
+    public static final String NAME = "Let's Encrypt Craft";
     public static final String VERSION = "@VERSION@";
-    public static Logger logger = LogManager.getLogger("letsencryptroot");
+    public static Logger logger = LogManager.getLogger(MOD_ID);
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -33,7 +32,7 @@ public class LetsEncryptRoot
                 if (minorVersion >= 111)
                 {
                     logger.info("Not running as Java version is at least Java 7u111.");
-                        return;
+                    return;
                 }
                 break;
             case "1.8":
