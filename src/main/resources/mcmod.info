@@ -1,0 +1,16 @@
+[
+{
+  "modid": "letsnecryptroot",
+  "name": "Let's Encrypt Root",
+  "description": "Mojang uses old Java 8... so lets add it ourselves.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Cloudhunter"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
