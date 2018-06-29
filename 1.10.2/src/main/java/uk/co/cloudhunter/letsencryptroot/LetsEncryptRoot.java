@@ -24,17 +24,21 @@ public class LetsEncryptRoot
     {
         String body = "";
         try {
+            logger.info("Adding Let's Encrypt certificate...");
             LetsEncryptAdder.addLetsEncryptCertificate();
+            logger.info("Done, attempting to connect to https://helloworld.letsencrypt.org...");
             URL url = new URL("https://helloworld.letsencrypt.org");
             InputStream inputStream = url.openStream();
             body = IOUtils.toString(inputStream);
         } catch (Exception e) {
-            logger.error("An error occurred whilst adding the Let's Encrypt root certificate. I'm afraid you wont be able to access web sites with a Let's Encrypt certificate D:", e);
+            logger.error("An error occurred whilst adding the Let's Encrypt root certificate. I'm afraid you wont be able to access resources with a Let's Encrypt certificate D:", e);
         }
 
         if (body.isEmpty())
         {
-            logger.error("An unknown error occurred whilst adding the Let's Encrypt root certificate. I'm afraid you may not be able to access web sites with a Let's Encrypt certificate D:");
+            logger.error("An unknown error occurred whilst adding the Let's Encrypt root certificate. I'm afraid you may not be able to access resources with a Let's Encrypt certificate D:");
+        } else {
+            logger.info("Done - you are now able to access resources with a Let's Encrypt certificate :D");
         }
     }
 }
