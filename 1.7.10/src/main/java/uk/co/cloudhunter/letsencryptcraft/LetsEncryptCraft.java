@@ -8,6 +8,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Mod(modid = LetsEncryptCraft.MOD_ID, name = LetsEncryptCraft.NAME, version = LetsEncryptCraft.VERSION, acceptableRemoteVersions="*", acceptedMinecraftVersions = "*")
 public class LetsEncryptCraft
@@ -16,15 +18,26 @@ public class LetsEncryptCraft
     public static final String MOD_ID = "letsencryptcraft";
     public static final String NAME = "Let's Encrypt Craft";
     public static final String VERSION = "@VERSION@";
-    public static Logger logger = LogManager.getLogger(MOD_ID);
+    public static Logger logger;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
         String version = System.getProperty("java.version");
-        String majorVersion = version.substring(0, version.lastIndexOf("."));
-        int minorVersion = Integer.valueOf(version.substring(version.lastIndexOf("_") + 1));
+        Pattern p = Pattern.compile("^(\\d+\\.\\d+).*?_(\\d+).*");
+        Matcher matcher = p.matcher(version);
+        String majorVersion;
+        int minorVersion;
+        if (matcher.matches())
+        {
+            majorVersion = matcher.group(1);
+            minorVersion = Integer.valueOf(matcher.group(2));
+        } else {
+            majorVersion = "1.7";
+            minorVersion = 110;
+            logger.info("Regex to parse Java version failed - applying anyway.");
+        }
 
         switch (majorVersion)
         {
